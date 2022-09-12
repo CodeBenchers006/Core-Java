@@ -1,0 +1,23 @@
+Java Access Modifiers
+
+-It is used to provide "access" controls to classes, methods and variables in Java
+
+-Types :
+1. public
+2. default
+3. private
+4. protected
+
+Note - We are allowed to use only public and default access modifier for classes in Java
+
+Public Access Modifier
+- The classes, methods and variables that are assigned with "public" access specifier/modifier are accessible by all the other classes globally.
+
+Default Access Modifier
+- The classes, methods and variables that are assigned with "default or no" access specifier/modifier are accessible by classes belonging to same package.
+
+Private Access Modifier
+- The methods and variables that are declared as "private" are only visible within the same class.
+
+Protected Access Modifier
+- The methods and variables that are declared as "protected" are only visible by classes within the same package or its subclasses.

@@ -1,0 +1,31 @@
+Thread Life Cycle -
+
+1. New - Born
+2. Runnable - Ready
+3. Running - Execute
+4. Not Runnable - Blocked
+5. Terminated - Dead
+
+Case 1 :
+ t1 ----> (New) ---->t.start()----->(Runnable)---->Thread Scheduler selects the thread --->(Running)---->t.run(),t.stop()---->(Terminated)
+
+ Here A new thread gets created when we create an object with Thread class
+ When we invoke "t.start()", the thread moves from Born to Ready State.
+ Now the thread has to wait for the Job Scheduler to select it, then the thread moves to Execute state
+ t.run() is invoked and after complete execution thread reaches to Dead state.
+ t.stop() directly changes the state to Dead state.
+ 
+Case 2 :
+ 
+ (Running) ----> t.join(),t.wait(),t.sleep() ----> (Blocked) -------after short duration ---->(Ready)
+ 
+ Here, During the execution if join, wait or sleep is invoked, the thread goes to Blocked state
+ After some interval, the thread auto changes its state from blocked to Ready State and waits for the scheduler to change its state from Ready to Execute
+ 
+ 
+Case 3 :
+
+ (Running) ----> t.suspend() ----> (Blocked) -------t.resume() ---->(Ready)
+ 
+  Here, suspend() is invoked to block the thread from Running, but now resume() has to be invoked in order to change its state from Blocked to Ready state.
+ 
